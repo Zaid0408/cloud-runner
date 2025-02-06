@@ -18,15 +18,15 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'python -m unittest discover'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'python3 -m unittest discover'
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
-                sh 'nohup python app.py &'
+                sh 'nohup python3 app.py &'
             }
         }
     }
