@@ -10,7 +10,11 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                    python3 -m venv venv  # Create a virtual environment
+                    . venv/bin/activate && pip install --upgrade pip  # Activate the virtual environment and upgrade pip
+                    . venv/bin/activate && pip install -r requirements.txt  # Install dependencies in the virtual environment
+                '''
             }
         }
 
