@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/') # '/system/monitor', methods=['GET']
+@app.route('/system/monitor', methods=['GET']) # '/system/monitor', methods=['GET']
 def system_monitor():
     return jsonify({"status": "Running smoothly"})
 
